@@ -1,36 +1,56 @@
-var express = require("express");
+// Our Burger controller
+// =====================
 
+// This file uses Sequelize to manage data manipulation
+// for all apropos http requests.
+
+// NOTE: This is the same file from last week's homework,
+// but with each route gutted and replaced with sequelize queries
+// where references to our outmoded ORM file once sat.
+
+var express = require('express');
 var router = express.Router();
+// edit burger model to match sequelize
+var Burger = require('../models/')["Burger"];
 
-// Import the model (burgers.js) to use its database functions.
-var burgers = require("../models/burger.js");
-
-// Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  burgers.selectAll(function(data) {
-    var hbsObject = {
-      burgers: data
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
+//get route -> index
+router.get('/', function(req,res) {
+	// send us to the next get function instead.
+	res.redirect('/burgers')
 });
 
-router.post("/", function(req, res) {
-  burgers.insertOne(req.body.name, function() {
-    res.redirect("/");
-  });
+// get route, edited to match sequelize
+router.get('/burgers', function(req,res) {
+	// replace old function with sequelize function
+	Burger.findAll()
+	// use promise method to pass the burgers...
+	.then(function(burger_data){
+		// into the main index, updating the page
+		return res.render('index', {burger_data})
+	})
 });
 
-router.put("/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
-  burgers.updateOne(req.params.id, function() {
-    res.redirect("/");
-  });
+// post route to create burgers
+router.post('/burgers/create', function(req, res) {
+	// edited burger create to add in a burger_name
+	Burger.create({name: req.body.name})
+	// pass the result of our call
+	.then(function(newBurger){
+		// redirect
+		res.redirect('/');
+	});
 });
 
-// Export routes for server.js to use.
+// put route to devour a burger
+router.put('/burgers/update', function(req, res){
+  Burger.Burger.update(
+    {
+      consumed: true
+    },
+    {where: {id: req.body.burger_id}
+    }).then(function(newBurger) {
+      res.redirect('/');
+    });
+})
+
 module.exports = router;
