@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     consumed: {
     	type: DataTypes.BOOLEAN,
-    	defaultValue: false // only line we needed to add.
+    	defaultValue: false // This is required for Sequelize to work correctly (as suggested in gitlab)
     }
   });
   return Burger;
