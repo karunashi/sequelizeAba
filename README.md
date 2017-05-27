@@ -4,7 +4,7 @@
 ## Live Link
  - https://serene-atoll-37338.herokuapp.com/
 
-## INstructions
+## Instructions
 Inspired by Starcraft II: Heart of The Swarm, this application allows the user to discover and identify specific strains/biomass that may be of use for the Swarm. Due to how Abathur, Evolution Master of the Swarm, can explore and seek out various items, sometimes the list could contain items that are outside of the raw resource, "Strain" and/or "Biomass", that Abathur is looking for. There are no limits to how many items that can be added to the list. The user can then choose to either consume said items to place them in the evolution pit, or keep the essence outside of the pit by not consuming it.
 
 1. Type into input area then press submit
