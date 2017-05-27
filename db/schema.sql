@@ -1,13 +1,12 @@
-### Schema
+CREATE DATABASE IF NOT EXISTS burgers_db1;
+USE burgers_db1;
 
-CREATE DATABASE burgers_db;
-USE burgers_db;
+DROP TABLE IF EXISTS burgers;
 
-CREATE TABLE burgers
-(
-	id int NOT NULL AUTO_INCREMENT,
-	name varchar(255) NOT NULL,
-	consumed BOOLEAN DEFAULT false,
-	creation TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (id)
+# Create the burgers table
+CREATE TABLE burgers (
+id int NOT NULL AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+consumed BOOL DEFAULT false,
+PRIMARY KEY (id)
 );
