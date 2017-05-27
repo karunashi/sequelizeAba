@@ -1,0 +1,27 @@
+{
+  "name": "evolution",
+  "version": "1.33.7",
+  "description": "Attempt at Burger assignment with my own spin inspired by Starcraft II: Heart of the Swarm's, Abathur.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karunashi/Burger.git"
+  },
+  "author": "karunashi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karunashi/Burger/issues"
+  },
+  "homepage": "https://github.com/karunashi/Burger#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.8",
+    "mysql": "^2.13.0"
+  }
+}

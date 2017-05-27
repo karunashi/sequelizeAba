@@ -1,0 +1,44 @@
+body {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	background: url("http://media.blizzard.com/sc2/media/artwork/swarm-artwork11-large.jpg");
+	background-size: cover;
+	color: red;
+}
+
+.well, .jumbotron {
+	background-color: rgba(245, 245, 245, 0.45);
+}
+
+.form-control, .btn-default {
+	resize: none;
+	background-color: rgba(245, 245, 245, 0.65);
+	border: none;
+	color: white;
+	font-size: 1.5em;
+}
+
+li {
+	font-size:1.5em;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#targetStrain {
+	width: 80%;
+	margin: 3% 10% 0 10%;
+}
+
+h1 {
+	font-size: 4.5em;
+}
+
+
+/* Testing changing colors.
+*::-webkit-input-placeholder, *:-moz-placeholder, *::-moz-placeholder, *:-ms-input-placeholder {
+	color: white;
+}
+*/
+
+
