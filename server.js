@@ -23,6 +23,14 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 var routes = require("./controllers/burgers_controller.js");
 
-app.use("/", routes);
+// For controller pathing ease, using solution from previous assignment as a guide
+app.use('/', routes);
+app.use('/update', routes);
+app.use('/create', routes);
+
+var models = require('./models')
+
+// Sync everything
+models.sequelize.sync();
 
 app.listen(PORT);
